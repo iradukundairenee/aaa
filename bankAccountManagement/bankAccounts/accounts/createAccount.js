@@ -1,6 +1,8 @@
-import rl from '../../console/interface.js'
+import rl from '../../consoleMenu/interface.js'
 import accounts from '../user/userInfo.js';
-import showMenu from '../../console/index.js';
+import showMenu from '../../consoleMenu/index.js';
+import {printSuccess} from '../../consoleMenu/console.js'
+
 
 const createAccount = () => {
     rl.question('Enter your name: ', (name) => {
@@ -9,7 +11,7 @@ const createAccount = () => {
             balance: 0
         };
         accounts.push(account);
-        console.log(`Account created for ${name}`);
+        printSuccess(`Account created for ${name}`);
         showMenu();
     });
 }
